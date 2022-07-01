@@ -1,0 +1,92 @@
+{
+    "0":{
+        "name":"Boule roulante",
+        "price":13.5,
+        "image_src":"whitepot4.jpg",
+        "contour_src":"contour4.png",
+        "alt_image":"'Petit pot arrondi'",
+        "filters":{
+            "shape":"round",
+            "size":"small",
+            "category":"classic"
+            }
+        },
+
+    "1":{
+        "name":"Parallélépipède",
+        "price":18,
+        "image_src":"whitepot5.jpg",
+        "contour_src":"contour5.png",
+        "alt_image":"'Pot haut carré'",
+        "filters":{
+            "shape":"square",
+            "size":"tall",
+            "category":"classic"
+            }
+        },
+
+    "2":{
+        "name":"Rainure élégante",
+        "price":16,
+        "image_src":"whitepot1.jpg",
+        "contour_src":"contour1.png",
+        "alt_image":"'Petit avec rainures'",
+        "filters":{
+            "shape":"cylinder",
+            "size":"small",
+            "category":"exotic"
+            }
+        },
+
+    "3":{
+        "name":"Habituel Mug",
+        "price":7.65,
+        "image_src":"whitepot3.jpg",
+        "contour_src":"contour3.png",
+        "alt_image":"'Petit pot cylindrique'",
+        "filters":{
+            "shape":"cylinder",
+            "size":"small",
+            "category":"classic"
+            }
+        },
+    
+    "4":{
+        "name":"Carrotement Vôtre",
+        "price":20.5,
+        "image_src":"whitepot6.jpg",
+        "contour_src":"contour6.png",
+        "alt_image":"'Long pot arrondi au sommet'",
+        "filters":{
+            "shape":"cylinder",
+            "size":"tall",
+            "category":"exotic"
+            }
+        },
+    
+    "5":{
+        "name":"Ras le bol",
+        "price":13.5,
+        "image_src":"whitepot2.jpg",
+        "contour_src":"contour2.png",
+        "alt_image":"'Petit pot cylindrique arrondi'",
+        "filters":{
+            "shape":"cylinder",
+            "size":"small",
+            "category":"classic"
+            }
+        },
+
+    "6":{
+        "name":"Vaguelette",
+        "price":10,
+        "image_src":"whitepot7.jpg",
+        "contour_src":"contour7.png",
+        "alt_image":"'Petit pot cylindrique\n avec motif de vague'",
+        "filters":{
+            "shape":"cylinder",
+            "size":"small",
+            "category":"exotic"
+            }
+        }
+}

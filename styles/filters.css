@@ -1,0 +1,10 @@
+.tittle {
+    text-align: center;
+    border: 1px solid;
+    padding: 5px;
+    background-color: whitesmoke;
+}
+
+.price_range {
+    align-items: center;
+}

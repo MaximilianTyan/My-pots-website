@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Map</title>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+
+<body>
+
+    <script>
+        async function getRoute() {
+            const query = await fetch(
+                `https://api.mapbox.com/directions/v5/mapbox/driving/45.784786,4.869515;45.762131,4.821471?steps=true&geometries=geojson&access_token=pk.eyJ1Ijoic2ViMTIwMSIsImEiOiJja3YxejV3eXMxb2lqMnVxdzJ2bnlyanZxIn0.ySy7y7Sd28J_2bmKGVt3CQ`,
+                { method: 'GET' })
+            const json = await query.json(); //pour avoir la distance : json.routes[0].distance
+        }
+        getRoute();
+        
+        async function geocod() {
+            const ville = "Lyon";
+            const query = await fetch(
+                `https://api.mapbox.com/geocoding/v5/mapbox.places/${ville}.json?access_token=pk.eyJ1Ijoic2ViMTIwMSIsImEiOiJja3ZjMWJheWQwaGI5MnVxbjY0NHdqMGNwIn0.cjn8lNKqfwXGemuNv160uQ`,
+                { method: 'GET' })
+            const json2 = await query.json()  //jspn2.features[0].center
+        }
+        geocod();
+
+    </script>
+
+<script>    
+    async function geocod() {
+        const ville = "Marseille";
+        const query = await fetch(
+            `https://api.mapbox.com/geocoding/v5/mapbox.places/${ville}.json?access_token=pk.eyJ1Ijoic2ViMTIwMSIsImEiOiJja3ZjMWJheWQwaGI5MnVxbjY0NHdqMGNwIn0.cjn8lNKqfwXGemuNv160uQ`,
+            { method: 'GET' })
+        const json = await query.json()  //json.features[0].center
+        const x = json.features[0].center[0];
+        const y = json.features[0].center[1];
+        const query2 = await fetch(
+            `https://api.mapbox.com/directions/v5/mapbox/driving/45.761071,4.853570;${y},${x}?steps=true&geometries=geojson&access_token=pk.eyJ1Ijoic2ViMTIwMSIsImEiOiJja3YxejV3eXMxb2lqMnVxdzJ2bnlyanZxIn0.ySy7y7Sd28J_2bmKGVt3CQ`,
+            { method: 'GET' })
+        const json2 = await query2.json(); //pour avoir la distance : json2.routes[0].distance
+        d=json2.routes[0].distance;
+
+        return(d);
+    }
+    geocod();
+</script>
+
+</body>
+</html>

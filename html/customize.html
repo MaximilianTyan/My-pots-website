@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang='fr'>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>My Pots</title>
+        <link rel="stylesheet" href="../styles/page.css">
+        <link rel="stylesheet" href="../styles/customize.css">
+    </head>
+    
+    <body>
+        <header>
+            <h2> Votre objet personnalisé </h2>
+        </header>
+        
+        <section class=main-content>
+            <canvas id=canvas height=500 width=500></canvas>
+            <form id=form> 
+                <h1> Personnalisation </h1>
+                <fieldset>
+                    <p id=item-name> Produit choisit: </p>
+                </fieldset>
+                <!-- couleur, (motif), fleurs, emballage, matériau -->
+                
+                <fieldset>
+                    <legend>Apparence</legend>
+                    <p>
+                    <label for=color> Couleur: </label>
+                    <input type="color" name=color id=color value='ffffff' oninput="updateItem()"> 
+                    </p>
+
+                    <p>
+                    <label> Matériau:</label> <br>
+                    <input type="radio" name=material onclick="updateItem()" id=ceramic checked=true>   
+                    <label for=gift> Céramique </label>
+                    <input type="radio" name=material onclick="updateItem()" id=wood> 
+                    <label for=wood> Bois </label>
+                    <input type="radio" name=material onclick="updateItem()" id=clay>      
+                    <label for=clay> Argile </label>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Commande</legend>
+                    <p>
+                    <label for=gift> Emballage cadeau: </label>
+                    <input type="checkbox" name=gift onclick="updateItem()" id=gift>
+                    </p>
+
+                    <p>
+                    <label for=quantity> Nombre </label>
+                    <input type="number" value=1 min=1 max=999 name=quantity onchange="updateItem()" id=quantity>
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <div class=action-buttons>
+                        <p id=item-price> Prix: </p>
+                        <input type="button" value="Ajouter au panier" id="buy" onclick='addToCart()'>
+                        <input type="button" value="Effacer" onclick="resetItem()" id=reset_button>
+                    </div>
+                </fieldset>
+                
+            </form>
+        </section>
+        <footer></footer>
+        <script src='../js/customize.js'></script>
+        <script src='../js/header&footer.js'></script>
+    </body>
+
+    
+
+</html>

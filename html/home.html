@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang='fr'>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>My Pots</title>
+        <link rel="stylesheet" href="../styles/page.css">
+        <link rel="stylesheet" href="../styles/home.css">
+        <link rel="stylesheet" href="../styles/item_cards.css">
+        <link rel="stylesheet" href="../styles/filters.css">
+
+    </head>
+    
+    <body>
+        <header>
+            <h2> Nos Produits </h2>
+        </header>
+        
+        <div class=main_container>
+            <div class=filters>
+                <form id=form>
+                    <p class=tittle> Options de filtrage </p>
+                    <p>Prix max : <input type="number" min=0 value=100 name="price" id="pricemax" oninput="updateFilters()"></p>
+                    <p>Prix min : <input type="number" min=0 value=0 name="price" id="pricemin" oninput="updateFilters()"> </p>
+                    
+
+                    <select name="Forme" oninput="updateFilters()" id="forme">
+                        <option value="all">Forme</option>
+                        <option value="round">Rond</option>
+                        <option value="square">Carré</option>
+                        <option value="cylinder">Cylindre</option>
+                    </select> 
+
+                    <p><input type="radio" name="size" value="small" onclick="updateFilters()" id="small"> Petit
+                    <input type="radio" name="size" value="tall" onclick="updateFilters()" id="tall"> Grand </p>
+
+                    <p><input type="radio" name="category" value="classic" onclick="updateFilters()" id="classic"> Classique
+                    <input type="radio" name="category" value="exotic" onclick="updateFilters()" id="exotic"> Exotique </p>
+
+                    <input type="button" value="Effacer" onclick="resetFilters()">
+                </form>
+            </div>
+
+            <div class=product_list id=product_list>
+                <p> Loading articles... </p>
+            </div>
+            <template id=card_template>
+                <a href="./customize.html?item={{id}}" id=item-{{id}}>
+                    <div class=card>
+                        <p class=item_name> {{name}} </p>
+                        <img src="../resources/images/{{image_src}}" alt={{alt_image}}>
+                        <p class=item_price> {{price}} </p>
+                    </div>
+                </a>
+            </template>
+        </div>
+        
+    
+        <footer></footer>
+        <script src='../js/cards.js'></script>
+        <script src='../js/filters.js'></script>
+        <script src='../js/header&footer.js'></script>
+    </body>
+</html>
+

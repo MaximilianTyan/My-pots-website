@@ -1,0 +1,48 @@
+.main_container {   
+    display: flex;
+    flex-flow: row nowrap; 
+    width: 90%;
+    height:auto;
+    align-items: top;
+    margin: auto;
+}
+
+.product_list {
+    flex: 80%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+
+    justify-content: center;
+    
+    padding: 20px;
+    background-color: rgba(180, 180, 180, 0.75);
+    border: 1px solid;
+    border-radius: 16px;
+
+    height: auto;
+
+    margin: 10px;
+}
+
+.product_list a {
+    text-decoration: none;
+}
+
+
+.filters {
+    flex:20%;
+
+    padding: 20px;
+
+    height: auto;
+    width: auto;
+
+    background-color: rgb(209, 209, 209, 0.75);
+    border: 1px solid;
+    border-radius: 16px;
+
+    margin:10px;
+}

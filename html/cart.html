@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang='fr'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Pots</title>
+    <link rel="stylesheet" href="../styles/page.css">
+    <link rel="stylesheet" href="../styles/cart.css">
+</head>
+
+<body>
+    <header>
+        <img src="../resources/icons/cart.png" alt="cart" class="imagecart">
+        <h2>Votre Panier</h2>
+        <img src="../resources/icons/cart.png" alt="cart" class="imagecart">
+    </header>
+
+    <div class=title> 
+        <h6>Votre panier</h6> 
+    </div>
+
+    
+    <section class=cart-content id=cart-content>
+        <h4> Vous n'avez rien dans votre panier </h4>
+    </section>
+
+    <template id='cart_item_template'>
+        <div class=cart-item id=item-{{item-id}}>
+            <div class=left>
+                <img src={{image_src}} width=100px height=100px>
+                <h3>{{name}}</h3>
+                <div class=custom_options>
+                    {{options}}
+                </div>
+
+            </div>
+
+            <div class=center>
+                <button onclick='addOne({{item-id}})' class=number-button> + </button>
+                <h3 id=item-number> {{quantity}} </h3>
+                <button onclick='removeOne({{item-id}})' class=number-button> - </button>
+            </div>
+            <div class=right>
+                <h3 id=item-price> {{price}} €</h3>
+                <button onclick='removeItem({{item-id}})' class=remove-button> x </button>
+            </div>
+            
+        </div>
+    </template>
+
+    <section id=validation_section>
+        <div id=side_left>
+            <div class=title> 
+                <h6> Vos informations</h6> 
+            </div>
+        
+            <form id=validation_form>
+                    <p id=oblig_state>* champs obligatoire</p>
+
+                    <p>Prénom *</p>
+                    <input type="text" name="firstname" required>
+
+                    <p>Nom *</p>
+                    <input type="text" name="lastname" required>
+
+                    <p>Adresse mail *</p>
+                    <input type="email" name="email" required>
+
+                    <p>Numéro de téléphone *</p>
+                    <input type="text" name="phone" required>
+
+                    <p>Adresse de livraison * </p>
+                    <input type="text" name="adresse" id="adresse" required>
+
+                    <p>Date de livraison souhaitée *</p>
+                    <input type="date" name="date" required>
+
+                    <p>Renseignement</p>
+                    <input type="text" name="renseignement">
+                    
+                    <input type="button" value="Valider" onclick="checkForm()" id=send>
+                    <input type="reset" value="Effacer" id=reset>
+
+            </form>
+        </div>
+
+        <br>
+        <div id=side_right>
+            <div class=title> 
+                <h6>Paiement</h6> 
+            </div>
+        
+
+            <section class=total_price>
+                <h1> Récapitulatif </h1>
+                <p id=items_price> Commande: </p>
+                <p id=delivery_price> Livraison: Entrer une adresse de livraison</p>
+                <p id=total_price> Prix total: </p>
+                <button id=buy> Valider </button>
+            </section>
+        </div>
+    </section>  
+
+
+
+    <footer></footer>
+    <script src='../js/header&footer.js'></script>
+    <script src='../js/cart.js'></script>
+</body>
+
+</html>
